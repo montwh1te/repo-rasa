@@ -1,91 +1,138 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saudacao
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+        - Oi.
+        - Olá!
+        - Oi!
+        - Bem vindo!
+        - Bom dia!
+        - Boa noite!
+        - Hey!
+        - Ei!
+        - Boa tarde!
+        - Olá, como vai?
+        - Olá, como você vai?
+        - goodevening
+        - Olá, bom dia!
+        - Olá, boa tarde!
+        - Olá, boa noite!
 
-- intent: goodbye
+- intent: despedida
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+        - Até logo!
+        - Nos vemos em breve.
+        - Cuide-se!
+        - Foi bom te ver.
+        - Até a próxima.
+        - Boa viagem!
+        - Fique bem!
+        - Mantenha contato.
+        - A gente se fala.
+        - Despeço-me por aqui.
+        - Até mais!
+        - Foi um prazer!
+        - Até logo, até mais ver!
+        - Adeus e boa sorte!
+        - Que tudo dê certo!
 
-- intent: affirm
+- intent: afirmacao
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+        - Concordo.
+        - Sim.
+        - Com certeza.
+        - Claro.
+        - Sem dúvida.
+        - Certo.
+        - Está bem.
+        - Exato.
+        - Ok. 
+        - Perfeito.
+        - Isso mesmo.
+        - Pode deixar.
+        - Combinado.
+        - Feito.
+        - Tá certo.
 
-- intent: deny
+- intent: negacao
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+        - Não.
+        - Jamais.
+        - Nunca.
+        - Acho que não.
+        - De jeito nenhum!
+        - Não é verdade.
+        - Não mesmo!
 
-- intent: mood_great
+- intent: good_feeling
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+        - Perfeito!
+        - Ótimo! 
+        - Incrível!
+        - Maravilha!
+        - Estou ótimo.
+        - Extremamente bem!
+        - Tão, tão perfeito.
+        - Muito bom.
+        - Absolutamente perfeito.
 
-- intent: mood_unhappy
+- intent: bad_feeling
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+        - Triste.
+        - Muito triste!
+        - Desapontado.
+        - Meu dia foi horrível.
+        - Estou decepcionado.
+        - Não muito bem.
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+        - Você é um bot?
+        - Você é um robô?
+        - Você é uma máquina?
+        - Você é uma IA?
+
+- intent: faq_pergunta
+  examples: |
+        - Quando lança o [EA FC 25](jogo_X)?
+        - Quero saber mais sobre o jogo [EA FC 25](jogo_X).
+        - Quero saber mais sobre o modo [Ultimate Team](modo1).
+        - Quero saber mais sobre o modo [Clubs](modo2).
+        - Quero saber mais sobre o modo [Volta](modo3).
+        - Quero saber mais sobre o modo [Carreira](modo4).
+
+- intent: help
+  examples: |
+        - Preciso de ajuda!
+        - Preciso de ajuda!
+        - Você pode me ajudar?
+        - Estou precisando de ajuda!
+        - Pode me dar uma mão?
+        - Preciso de uma ajuda, por favor.
+        - Ajuda, por favor!
+        - Me dá uma força?
+        - Pode me ajudar com isso?
+        - Tem como você me ajudar?
+        - Estou com dificuldade, pode ajudar?
+        - Me ajude, por favor!
+        - Poderia me dar uma ajuda?
+        - Socorro, preciso de ajuda!
+        - Preciso de uma orientação, pode ajudar?
+        - Tem como me dar uma ajuda?
+        
+- intent: reforco_entities
+  examples: |
+        - [EA FC 25](jogo_X) é divertido!
+        - Eu gosto do [EA FC 24](jogo_Y).
+        - [Ultimate Team](modo1) é interessante.
+        - [Clubs](modo2) é muito bom.
+        - Escolha o [Volta](modo3).
+        - Experimente o modo [Carreira](modo4).
+
+- intent: reembolso
+  examples: |
+    - Quero solicitar um reembolso do [EA FC 24](jogo_Y).
+    - Preciso de um reembolso para [FIFA 23](jogo_Y).
+    - Meu pedido de reembolso é para [Call of Duty](jogo_Y).
+    - Quero devolver [The Last of Us](jogo_Y).

@@ -2,12 +2,57 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Responder com tom de despedida quando o usuário se despedir
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: despedida
+    - action: utter_despedida
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Responder que é um bot quando desafiado
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+
+- rule: Responder a pergunta FAQ quando o usuário questionar sobre um produto
+  steps:
+    - intent: faq_pergunta
+    - action: utter_faq_pergunta
+
+- rule: Responder sobre um pedido de ajuda
+  steps:
+    - intent: help
+    - action: utter_help
+
+- rule: Saudar o usuário no início da conversa.
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+
+- rule: Negar quando uma informação não bater.
+  steps:
+    - intent: negacao
+    - action: utter_negacao
+
+- rule: Concordar com o usuário quando a conversa estiver no caminho certo.
+  steps:
+    - intent: afirmacao
+    - action: utter_afirmacao
+
+- rule: Compartilhar o sentimento confortável e bom envolvido na conversa.
+  steps:
+    - intent: good_feeling
+    - action: utter_good_feeling
+
+- rule: Solidarizar com o usuário que possui um sentimento ruim.
+  steps:
+    - intent: bad_feeling
+    - action: utter_bad_feeling
+
+- rule: Conversar sobre os modos de jogo dos FIFAS.
+  steps:
+    - intent: reforco_entities
+    - action: utter_reforco_entities
+
+- rule: Indicar o lugar aonde realizar o reembolso.
+  steps:
+    - intent: reembolso
+    - action: utter_reembolso

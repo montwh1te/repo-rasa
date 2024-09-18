@@ -1,91 +1,99 @@
+version: "3.1"
+
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: Saudacao e Agradecimento
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      Olá
+    intent: saudacao
+  - action: utter_saudacao
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      Estou me sentindo bem
+    intent: good_feeling
+  - action: utter_good_feeling
 
-- story: happy path 2
+- story: Despedida do Usuário
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      Adeus
+    intent: despedida
+  - action: utter_despedida
 
-- story: sad path 1
+- story: Pedido de Ajuda
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+      Preciso de ajuda
+    intent: help
+  - action: utter_help
 
-- story: sad path 2
+- story: Desafio ao Bot
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
+      Você é um bot?
     intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_bot_challenge
+
+- story: Pergunta sobre FAQ
+  steps:
+  - user: |
+      Tenho uma pergunta sobre o FAQ
+    intent: faq_pergunta
+  - action: utter_faq_pergunta
+
+- story: Confirmação e Ação
+  steps:
+  - user: |
+      Sim
+    intent: afirmacao
+  - action: utter_afirmacao
+  - user: |
+      Preciso de ajuda
+    intent: help
+  - action: utter_help
+
+- story: Negação e Solicitação de Ajuda
+  steps:
+  - user: |
+      Não
+    intent: negacao
+  - action: utter_negacao
+  - user: |
+      Preciso de ajuda
+    intent: help
+  - action: utter_help
+
+- story: Sentimento Ruim e Ajuda
+  steps:
+  - user: |
+      Não estou me sentindo bem
+    intent: bad_feeling
+  - action: utter_bad_feeling
+  - user: |
+      Preciso de ajuda
+    intent: help
+  - action: utter_help
+
+- story: Saudacao e Pergunta FAQ
+  steps:
+  - user: |
+      Olá
+    intent: saudacao
+  - action: utter_saudacao
+  - user: |
+      Pergunta sobre o FAQ
+    intent: faq_pergunta
+  - action: utter_faq_pergunta
+
+- story: Sentimento Bom e Despedida
+  steps:
+  - user: |
+      Estou me sentindo ótimo
+    intent: good_feeling
+  - action: utter_good_feeling
+  - user: |
+      Adeus
+    intent: despedida
+  - action: utter_despedida

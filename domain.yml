@@ -1,33 +1,144 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+    - faq_pergunta
+    - help
+    - saudacao
+    - despedida
+    - afirmacao
+    - negacao
+    - good_feeling
+    - bad_feeling
+    - bot_challenge
+    - reforco_entities
+    - reembolso
 
+entities:
+    - jogo_X
+    - jogo_Y
+    - modo1
+    - modo2
+    - modo3
+    - modo4
+
+slots:
+  jogo_Y:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: jogo_Y
+  jogo_X:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: jogo_X
+  modo1:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: modo1
+  modo2:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: modo2
+  modo3:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: modo3
+  modo4:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: modo4
+  
+  
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+    utter_saudacao:
+      - text: "Olá, bom dia!"
+      - text: "Olá, boa tarde!"
+      - text: "Olá, boa noite!"
+      - text: "Bem vindo!"
+      - text: "Olá!"
+      - text: "Oi!"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    utter_help:
+      - text: "Claro, como posso ajudar?"
+      - text: "Estou aqui para ajudar! O que você precisa?"
+      - text: "Com certeza, em que posso te ajudar?"
+      - text: "Claro, me diga como posso te ajudar."
+      - text: "Sim, como posso ser útil?"
+      - text: "Pode contar comigo! O que você precisa?"
+      - text: "Estou à disposição, o que você precisa?"
+      - text: "Claro, estou aqui para te ajudar!"
+      - text: "Estou pronto para ajudar, o que você gostaria?"
+      - text: "Sim, estou aqui para ajudar! O que deseja?"
+      - text: "Fico feliz em ajudar, como posso te ajudar?"
+      - text: "Pode deixar, me diga como posso ajudar."
+      - text: "Estou disponível para ajudar, em que posso ser útil?"
+      - text: "Certamente! Como posso te ajudar agora?"
+      - text: "Fico à disposição, em que você precisa de ajuda?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+    utter_despedida:
+      - text: "Até logo!"
+      - text: "Nos vemos em breve. Cuide-se!"
+      - text: "Até a próxima."
 
-  utter_happy:
-  - text: "Great, carry on!"
+    utter_afirmacao:
+      - text: "Que bom que concorda, vamos prosseguir."
+      - text: "Vamos prosseguir."
+      - text: "Vamos continuar!"
+      - text: "Que ótimo, vamos continuar!"
+      - text: "Que ótimo, vamos prosseguir."
 
-  utter_goodbye:
-  - text: "Bye"
+    utter_negacao:
+      - text: "Não."
+      - text: "Não, não é necessariamente assim."
+      - text: "Não é por esse caminho."
+      - text: "Pense de outra forma, este não é o caminho."
+      - text: "Não é desta maneira."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    utter_bot_challenge:
+      - text: "Sim, eu sou um bot!"
+      - text: "Sim, eu sou um bot programado pela RASA!"
+      - text: "Sim, eu sou um robô!"
+      - text: "Sim, eu sou uma inteligência artificial!"
+
+    utter_good_feeling:
+      - text: "Que ótimo!"
+      - text: "Fico feliz em saber que se sente bem!"
+
+    utter_bad_feeling:
+      - text: "Que pena, vamos alterar isso!"
+      - text: "Vamos melhorar esse dia logo, então!"
+      - text: "Pense que você é muito mais importante do que você imagina!"
+
+    utter_faq_pergunta:
+      - text: "O jogo {jogo_X} será lançado no dia 27 de Setembro de 2024!"
+      - text: "O jogo {jogo_X} conta com os melhores jogadores dos maiores clubes e competições do planeta, além de dados de partidas das ligas mais importantes do mundo por trás da forma como mais de 19.000 jogadores de mais de 700 clubes autênticos se movimentam, jogam e vencem em cada partida. Além disso, modos como {modo1}, {modo2}, {modo3} e {modo4} contribuem para a dinâmica do jogo!"
+      - text: "O {modo1} é um modo em que os jogadores podem montar o time utilizando cartas de diversos atletas de vários clubes e ligas ao redor do mundo, formando as melhores composições de elenco para enfrentar os outros oponentes, em busca de ranques mais altos."
+      - text: "O {modo2} é um modo social online do {jogo_X} que permite a criação de um Craque Virtual para jogar com suas amizades."
+      - text: "O {modo3} mistura futebol de rua, personalização, trabalho em equipe e uma sensação única que você só encontra no VOLTA FOOTBALL. Ele conta com um modo história e muita diversão online com suas amizades."
+      - text: "O Modo {modo4} permite que os jogadores podem começar uma jornada comandando um clube como treinador ou atleta para evoluir ao longo de diversas temporadas e construir seu caminho no futebol internacional."
+
+    utter_reforco_entities:
+      - text: "Realmente o {jogo_X} é demais!"
+      - text: "Eu também gosto do {jogo_Y}."
+      - text: "Claro que o {modo1} é interessante, ele te proporciona várias alternativas de jogo."
+      - text: "{modo2} é realmente muito inclusivo."
+      - text: "Escolha o {modo3} que você vai realmente viver a experiência de um futebol de rua."
+      - text: "Experimente o modo {modo4} para uma realista imersão de carreira de jogador ou técnico."
+      
+    utter_reembolso:
+      - text: "Para solicitar um reembolso do {jogo_Y}, você deverá acessar o nosso site na aba FAQ e abrir um chat com nossos atendentes onlines."
+
 
 session_config:
   session_expiration_time: 60
